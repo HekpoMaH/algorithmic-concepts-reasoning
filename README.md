@@ -87,7 +87,7 @@ This will produce a `.csv` file in the `algos/results` folder. (Created automati
 Now, if you want to generate statistics over several seeds (e.g. for standard deviation), use
 the `*several_seeds.py` scripts and `test.py`.
 
-For training several seeds, use the `train_several_seeds.py` script. Most flags
+For training ***several*** seeds, use the `train_several_seeds.py` script. Most flags
 should match there and, behind the curtains, `train_several_seeds.py` spawns
 several `train.py` processes via a shell script.
 
