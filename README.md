@@ -29,3 +29,18 @@ Currently the code is split into two folders, due to the specificity of the
 implementation of Kruskal's algorithm:
 1. BFS and parallel coloring heuristic (`algos`)
 1. Kruskal's Minimum Spanning Tree (MST) algorithm (`algos/mst`)
+
+### Preparing datasets
+
+The first two algorithms listed above read their datasets from disk. Therefore,
+before performing any experiments on them, run.
+```
+python -m algos.prepare_datasets
+```
+
+The implementation of Kruskal's doesn't require any such preparation, but
+generates the datasets on every run.
+
+In both cases, seeds are fixed, so that datasets generated are the same no
+matter how many times one runs `prepare_datasets.py` or  re-generates Kruskal's
+data.
