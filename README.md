@@ -22,3 +22,10 @@ seaborn==0.11.1
 simple==0.1.1
 sympy==1.8
 ```
+
+## Code organisation
+
+Currently the code is split into two folders, due to the specificity of the
+implementation of Kruskal's algorithm:
+1. BFS and parallel coloring heuristic (`algos`)
+1. Kruskal's Minimum Spanning Tree (MST) algorithm (`algos/mst`)
