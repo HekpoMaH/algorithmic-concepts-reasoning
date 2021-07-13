@@ -23,7 +23,7 @@ simple==0.1.1
 sympy==1.8
 ```
 
-Some of our scripts use Unix shell commands. All scripts have been tested under Ubuntu 20.04
+Some of our scripts use Unix shell (`bash`) commands. All scripts have been tested under Ubuntu 20.04
 
 ## Code organisation
 
