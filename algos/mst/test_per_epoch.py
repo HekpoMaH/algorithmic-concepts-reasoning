@@ -42,6 +42,8 @@ def main():
     os.makedirs(basedir, exist_ok=True)
 
     patt = f'./algos/serialised_models/mst/explainer/{args["--model-name"]}-epoch=????.ckpt'
+    if not os.path.exists('./algos/results/'):
+        os.makedirs('./algos/results/')
     model_paths = glob.glob(patt)
     model_paths = sorted(model_paths, key=get_epoch)
 
