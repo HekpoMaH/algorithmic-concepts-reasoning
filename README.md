@@ -59,6 +59,8 @@ configurations we used later below.
 
 ### BFS and parallel coloring
 
+The scripts for BFS and parallel coloring are in the `algos` folder.
+
 Training ***one*** seed is achieved via the `train.py`. `train.py` serialises
 the weights of the model every 10 epochs in the `algos/serialised_models`
 directory, which is automatically created the first time you attempt to train
@@ -106,6 +108,17 @@ For generating the statistics per epoch for all the seeds use
 `test_several_seeds.py` script. Behind the curtains this spawns several
 `test_per_epoch.py` scripts.
 
+#### Kruskal's algorithm
+
+The code for Kruskal's algorithm resides in the `algos/mst` folder. Although
+the implementation is different, we aimed to make the training/testing API as
+close as possible --- training/testing one seed is done via
+`algos/mst/train.py`, `algos/mst/test.py` and `algos/mst/test_per_epoch.py`,
+respectively, training several seeds is done via
+`algos/mst/train_several_seeds.py`, `algos/mst/test.py` (with the `--use-seeds`
+flag) and `algos/mst/test_several_seeds.py`.
+
+### In case you want to experiment...
 
 ### Examples
 

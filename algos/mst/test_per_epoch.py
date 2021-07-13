@@ -11,7 +11,8 @@ Options:
 
     --test-formulas     Whether to test formulas on each epoch. If not set,
                         formula results will be set to -1 in the respective columns.
-                        BEWARE: This slows down the process significantly.
+                        BEWARE: This slows down the process significantly, so use
+                        when you have very few epochs to test.
                         [default: False]
 """
 import shutil

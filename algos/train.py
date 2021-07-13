@@ -8,8 +8,8 @@ Options:
     -h --help              Show this screen.
 
     --use-TF               Use Teacher Forcing or not during training. Not
-                           using it, would add a GRU cell at the GNN update step.
-                           [default: False]
+                           using it, would add a GRU cell at the GNN update
+                           step. [default: False]
 
     --use-GRU              Force the usage of a GRU cell at the GNN update step.
                            [default: False]
