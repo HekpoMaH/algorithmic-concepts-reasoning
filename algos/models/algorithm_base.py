@@ -558,6 +558,8 @@ class AlgorithmBase(nn.Module):
             losses_dict.update(
                 {'L1_loss': 0.005*dtmul*(l1_loss(self.concept_decoder))}# + l1_loss(self.termination_network))}
             )
+            if validation:
+                losses_dict['L1_loss'] = losses_dict['L1_loss'].item()
 
         return losses_dict
 

@@ -96,7 +96,6 @@ for seed in range(args['--starting-seed'], args['--starting-seed']+args['--num-s
     command += '&'
     commands.append(command)
 print(commands)
-exit(0)
 
 with open("runseeds.sh", 'w+') as f:
     for command in commands:

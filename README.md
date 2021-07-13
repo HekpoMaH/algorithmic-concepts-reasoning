@@ -120,10 +120,48 @@ flag) and `algos/mst/test_several_seeds.py`.
 
 ### In case you want to experiment...
 
+And want to make modifications to our code, the rest of the repository consists of:
+
+1. `algos/models` folder contains implementations of the *whole* architectures
+   for the processor (`algorithm_processor.py`) and algorithms
+   (`algorithm_base.py` for BFS, `algorithm_coloring.py` for parallel coloring,
+   which reuses parts of the BFS implementation).
+
+1. `algos/layers` folder contains *layers* of the architecture, such as
+   a single MPNN layer or a PrediNet pooling, various encoders for inputs, e.g.
+   bit encoders,
+
+1. `algos/deterministic` folder contains the deterministic implementations of
+   the algorithms that we use to generate our data and `algos/datasets.py`
+   holds the corresponding PyTorch dataset wrappers.
+
+1. `algos/utils.py` holds various utility functions, such as data preparation,
+   iterating over a batch, adding explanations to trained models, etc.
+
+Finally, `algos/mst` is organised in the same way, with the difference that
+`algos/mst/data_structure.py` holds the deterministic implementation of
+a union-find data structure.
+
 ### Examples
 
+As this is a lot of information, we provide some examples to get you started:
+
+For BFS run:
 ```
 python -m algos.train_several_seeds --use-TF --use-GRU --algos BFS --epochs 500 --no-patience --model-name BFS
 ```
+and if you want to remove concept bottlenecks and supervision add:
+```
+python -m algos.train_several_seeds --use-TF --use-GRU --algos BFS --epochs 500 --no-patience --model-name BFS --no-use-concepts --no-use-concepts-sv
+```
 
-more to come...
+For parallel coloring, you just need to change the `--algos` flag to
+`parallel_coloring` and adjust hyperparameters:
+```
+python -m algos.train_several_seeds --use-TF --use-GRU --algos parallel_coloring --epochs 3000 --prune-epoch 2000 --L1-loss --no-patience --model-name parallel_coloring
+```
+
+And finally, for Kruskal's:
+```
+python -m algos.mst.train_several_seeds --epochs 100 --model-name kruskal --num-nodes 8
+```
